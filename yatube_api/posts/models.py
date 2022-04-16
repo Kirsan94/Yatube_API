@@ -19,7 +19,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='posts')
     image = models.ImageField(
-        upload_to='posts/', null=True, blank=True)
+        upload_to='posts/images/', null=True, blank=True)
 
     group = models.ForeignKey(
         Group, on_delete=models.SET_NULL,
@@ -44,7 +44,7 @@ class Follow(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='user'
+        related_name='followers'
     )
     following = models.ForeignKey(
         User,
@@ -52,10 +52,10 @@ class Follow(models.Model):
         related_name='following'
     )
 
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(
-                fields=['user', 'following'],
-                name='unique_follow'
-            )
-        ]
+    # class Meta:
+    #     constraints = [
+    #         models.UniqueConstraint(
+    #             fields=['user', 'following'],
+    #             name='unique_follow'
+    #         )
+    #     ]
