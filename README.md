@@ -13,14 +13,15 @@
 
 Чтобы развернуть проект на локальной машине необходимо:
   Установить и запустить локальное окружение
-    pytnon -m venv venv
-    . venv/Scripts/activate
+    ```pytnon -m venv venv```
+    ```. venv/Scripts/activate```
   Установить зависимости
-    pip install -r requirements.txt
+    ```pip install -r requirements.txt```
   Перейти в папку, где лежит manage.py и сделать миграции
-    python manage.py migrate
+    ```cd yatube_api/```
+    ```python manage.py migrate```
   Запустить сервер
-    python manage.py runserver
+    ```python manage.py runserver```
 
 
 Примеры запросов к API можно найти в документации:
