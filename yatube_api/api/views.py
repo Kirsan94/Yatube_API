@@ -47,7 +47,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 class FollowViewSet(CreateRetrieveViewSet):
     serializer_class = FollowSerializer
-    permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly, ]
+    permission_classes = [permissions.IsAuthenticated, ]
     filter_backends = (filters.SearchFilter, )
     search_fields = ('following__username',)
 
